@@ -1,9 +1,8 @@
 //@flow
 
 export class CommonWidget {
-  constructor (rootElement) {
-    this.rootElement = this.getRootElement('common-widget')
-    const htmlTemplate = '<div>This is Common Widget</div>'
+  constructor (rootElement, htmlTemplate) {
+    this.rootElement = this.getRootElement(rootElement)
     if(this.rootElement) {
       this.rootElement.innerHTML = htmlTemplate
     }
