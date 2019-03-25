@@ -1,15 +1,19 @@
 //@flow
+import logniWrapper from './logging/logniWrapper'
 
 export default class CommonWidget {
-  constructor (rootElement, htmlTemplate) {
-    this.rootElement = this.getRootElement(rootElement)
+  constructor (rootElementId, htmlTemplate) {
+    this.rootElement = this.getRootElement(rootElementId)
     this.htmlTemplate = htmlTemplate
-    this.setHtmlTemplate()
+    this.setHtmlTemplate(rootElementId)
   }
 
-  setHtmlTemplate() {
-    if(this.rootElement) {
+  setHtmlTemplate(rootElementId) {
+    if (this.rootElement) {
       this.rootElement.innerHTML = this.htmlTemplate
+    } else {
+      const errorDetail = `Unable to find root #${rootElementId} element.`
+      logniWrapper.error(errorDetail, 3)
     }
   }
 
