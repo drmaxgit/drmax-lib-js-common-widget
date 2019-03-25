@@ -11,6 +11,7 @@ export default class CommonWidget {
   setHtmlTemplate(rootElementId) {
     if (this.rootElement) {
       this.rootElement.innerHTML = this.htmlTemplate
+      logniWrapper.debug(`Widget mounted on #${rootElementId} element.`, 7)
     } else {
       const errorDetail = `Unable to find root #${rootElementId} element.`
       logniWrapper.error(errorDetail, 3)
