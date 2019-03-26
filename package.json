@@ -2,7 +2,7 @@
   "name": "drmax-common-widget",
   "version": "1.0.0",
   "description": "Common widget",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config etc/config/webpack.config-prod.js",
