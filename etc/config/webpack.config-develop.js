@@ -12,7 +12,7 @@ module.exports = merge(common, {
   },
   plugins: [
       new HTMLWebpackPlugin({
-          template: 'static/index.html'
+          template: 'www/index.html'
       }),
       new webpack.HotModuleReplacementPlugin(),
   ]
