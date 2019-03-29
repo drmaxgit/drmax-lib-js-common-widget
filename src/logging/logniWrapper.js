@@ -4,23 +4,27 @@ import logni from 'logni.js'
 /**
  * Simple wrapper of logni.
  */
-const logniWrapper = {
-  info: (msg: string, level: number) => {
-    window.logni.info(msg, level)
-  },
-  warn: (msg: string, level: number) => {
-    window.logni.warn(msg, level)
-  },
-  error: (msg: string, level: number) => {
-    window.logni.error(msg, level)
-  },
-  fatal: (msg: string, level: number) => {
-    window.logni.fatal(msg, level)
-  },
-  debug: (msg: string, level: number) => {
-    window.logni.debug(msg, level)
-  },
-}
+ class logniWrapper {
+   static info(msg, level) {
+     return window.logni.info(msg, level)
+   }
+
+   static warn(msg, level) {
+     return window.logni.warn(msg, level)
+   }
+
+   static error(msg, level) {
+     return window.logni.error(msg, level)
+   }
+
+   static fatal(msg, level) {
+     return window.logni.fatal(msg, level)
+   }
+
+   static debug(msg, level) {
+     return window.logni.debug(msg, level)
+   }
+ }
 
 /**
  * Initializes Logni in case it has not been initialized in index.html.
