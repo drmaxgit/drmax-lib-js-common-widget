@@ -1,19 +1,34 @@
 //@flow
+import logniWrapper from './logging/logniWrapper'
+import { DEFAULT_DATA_LAYER_NAME } from './constants'
 
 export default class CommonWidget {
-  constructor (rootElement, htmlTemplate) {
-    this.rootElement = this.getRootElement(rootElement)
+  constructor (rootElementId, htmlTemplate, widgetType) {
+    this.rootElement = this.getRootElement(rootElementId)
     this.htmlTemplate = htmlTemplate
-    this.setHtmlTemplate()
+    this.setHtmlTemplate(rootElementId)
+    this.widgetType = widgetType
   }
 
-  setHtmlTemplate() {
-    if(this.rootElement) {
+  setHtmlTemplate(rootElementId) {
+    if (this.rootElement) {
       this.rootElement.innerHTML = this.htmlTemplate
+      logniWrapper.debug(`${widgetType}: Widget mounted on #${rootElementId} element.`, 1)
     }
   }
 
   getRootElement(rootElementId) {
-    return document.querySelector(`#${rootElementId}`)
+    const rootElement = document.querySelector(`#${rootElementId}`)
+
+    if (!rootElement) {
+      const errorDetail = `${widgetType}: Unable to find root #${rootElementId} element.`
+      logniWrapper.error(errorDetail, 3)
+    }
+
+    return rootElement
+  }
+
+  static getDataLayerName() {
+    return DEFAULT_DATA_LAYER_NAME
   }
 }
