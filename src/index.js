@@ -4,16 +4,17 @@ import { DEFAULT_DATA_LAYER_NAME } from './constants'
 
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
+    this.widgetType = widgetType
     this.rootElement = this.getRootElement(rootElementId)
     this.htmlTemplate = htmlTemplate
+    this.logniWrapper = new logniWrapper(this.widgetType)
     this.setHtmlTemplate(rootElementId)
-    this.widgetType = widgetType
   }
 
   setHtmlTemplate(rootElementId) {
     if (this.rootElement) {
       this.rootElement.innerHTML = this.htmlTemplate
-      logniWrapper.debug(`${this.widgetType}: Widget mounted on #${rootElementId} element.`, 1)
+      this.logniWrapper.debug(`Widget mounted on #${rootElementId} element.`, 1)
     }
   }
 
@@ -21,8 +22,8 @@ export default class CommonWidget {
     const rootElement = document.querySelector(`#${rootElementId}`)
 
     if (!rootElement) {
-      const errorDetail = `${this.widgetType}: Unable to find root #${rootElementId} element.`
-      logniWrapper.error(errorDetail, 3)
+      const errorDetail = `Unable to find root #${rootElementId} element.`
+      this.logniWrapper.error(errorDetail, 3)
     }
 
     return rootElement
@@ -32,7 +33,7 @@ export default class CommonWidget {
     return DEFAULT_DATA_LAYER_NAME
   }
 
-  static getLogniWrapper() {
-    return logniWrapper
+  getLogniWrapper() {
+    return this.logniWrapper
   }
 }
