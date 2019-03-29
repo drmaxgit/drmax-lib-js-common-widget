@@ -1,5 +1,6 @@
 //@flow
 import logniWrapper from './logging/logniWrapper'
+import { DEFAULT_DATA_LAYER_NAME } from './constants'
 
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
@@ -7,6 +8,7 @@ export default class CommonWidget {
     this.htmlTemplate = htmlTemplate
     this.setHtmlTemplate(rootElementId)
     this.widgetType = widgetType
+    this.dataLayerName = DEFAULT_DATA_LAYER_NAME
   }
 
   setHtmlTemplate(rootElementId) {
