@@ -2,33 +2,23 @@
 import logni from 'logni.js'
 
 /**
- * Prepends widget info in front of a message.
- *
- * @param msg
- * @returns {string}
- */
-const addWidgetInfoTo = (msg: string, widgetType: string) => {
-  return `(${widgetType}) ${msg}`
-}
-
-/**
  * Simple wrapper of logni.
  */
 const logniWrapper = {
-  info: (msg: string, level: number, widgetType: string) => {
-    window.logni.info(addWidgetInfoTo(msg, widgetType), level)
+  info: (msg: string, level: number) => {
+    window.logni.info(msg, level)
   },
   warn: (msg: string, level: number) => {
-    window.logni.warn(addWidgetInfoTo(msg, widgetType), level)
+    window.logni.warn(msg, level)
   },
   error: (msg: string, level: number) => {
-    window.logni.error(addWidgetInfoTo(msg, widgetType), level)
+    window.logni.error(msg, level)
   },
   fatal: (msg: string, level: number) => {
-    window.logni.fatal(addWidgetInfoTo(msg, widgetType), level)
+    window.logni.fatal(msg, level)
   },
   debug: (msg: string, level: number) => {
-    window.logni.debug(addWidgetInfoTo(msg, widgetType), level)
+    window.logni.debug(msg, level)
   },
 }
 

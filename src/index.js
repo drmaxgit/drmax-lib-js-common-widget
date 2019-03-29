@@ -12,7 +12,7 @@ export default class CommonWidget {
   setHtmlTemplate(rootElementId) {
     if (this.rootElement) {
       this.rootElement.innerHTML = this.htmlTemplate
-      logniWrapper.debug(`Widget mounted on #${rootElementId} element.`, 7, this.widgetType)
+      logniWrapper.debug(`${widgetType}: Widget mounted on #${rootElementId} element.`, 1)
     }
   }
 
@@ -20,8 +20,8 @@ export default class CommonWidget {
     const rootElement = document.querySelector(`#${rootElementId}`)
 
     if (!rootElement) {
-      const errorDetail = `Unable to find root #${rootElementId} element.`
-      logniWrapper.error(errorDetail, 3, this.widgetType)
+      const errorDetail = `${widgetType}: Unable to find root #${rootElementId} element.`
+      logniWrapper.error(errorDetail, 3)
     }
 
     return rootElement
