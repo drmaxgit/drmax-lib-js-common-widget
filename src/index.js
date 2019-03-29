@@ -8,7 +8,6 @@ export default class CommonWidget {
     this.htmlTemplate = htmlTemplate
     this.setHtmlTemplate(rootElementId)
     this.widgetType = widgetType
-    this.dataLayerName = DEFAULT_DATA_LAYER_NAME
   }
 
   setHtmlTemplate(rootElementId) {
@@ -27,5 +26,9 @@ export default class CommonWidget {
     }
 
     return rootElement
+  }
+
+  static getDataLayerName() {
+    return DEFAULT_DATA_LAYER_NAME
   }
 }
