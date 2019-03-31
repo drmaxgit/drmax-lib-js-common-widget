@@ -4,22 +4,43 @@ import logni from 'logni.js'
 /**
  * Simple wrapper of logni.
  */
-const logniWrapper = {
-  info: (msg: string, level: number) => {
-    window.logni.info(msg, level)
-  },
-  warn: (msg: string, level: number) => {
-    window.logni.warn(msg, level)
-  },
-  error: (msg: string, level: number) => {
-    window.logni.error(msg, level)
-  },
-  fatal: (msg: string, level: number) => {
-    window.logni.fatal(msg, level)
-  },
-  debug: (msg: string, level: number) => {
-    window.logni.debug(msg, level)
-  },
+class logniWrapper {
+  constructor(id) {
+    this.id = id
+  }
+
+  /**
+  * Prepends id in front of a message.
+  *
+  * @param msg
+  * @returns {string}
+  */
+  addIdToMsg(msg) {
+    if (this.id) {
+      return `${this.id}: ${msg}`
+    }
+    return `${msg}`
+  }
+
+  info(msg, level) {
+    return window.logni.info(this.addIdToMsg(msg), level)
+  }
+
+  warn(msg, level) {
+    return window.logni.warn(this.addIdToMsg(msg), level)
+  }
+
+  error(msg, level) {
+    return window.logni.error(this.addIdToMsg(msg), level)
+  }
+
+  fatal(msg, level) {
+    return window.logni.fatal(this.addIdToMsg(msg), level)
+  }
+
+  debug(msg, level) {
+    return window.logni.debug(this.addIdToMsg(msg), level)
+  }
 }
 
 /**
