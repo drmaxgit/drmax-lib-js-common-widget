@@ -1,5 +1,5 @@
 //@flow
-import logniWrapper from './logging/logniWrapper'
+import logniWrapper, { initLogniIfNeeded } from './logging/logniWrapper'
 import { DEFAULT_DATA_LAYER_NAME } from './constants'
 
 export default class CommonWidget {
