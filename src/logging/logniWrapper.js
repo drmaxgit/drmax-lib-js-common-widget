@@ -49,7 +49,8 @@ class logniWrapper {
  * In normal case, Logni is loaded as remote script in index.html and
  * initialized there. In case that fails, we use compiled version that is initialized here.
  */
-export const initLogniIfNeeded = () => {
+export const initLogniIfNeeded = (widgetType) => {
+  const logniWrapperObject = new logniWrapper(widgetType)
   if (!window.logni) {
     logni.mask(window.logniMask)
     logni.file(window.logniLogUrl)
@@ -60,7 +61,7 @@ export const initLogniIfNeeded = () => {
 
     window.logni = logni
 
-    logniWrapper.warn('No Logni found. Using compiled version.', 3)
+    logniWrapperObject.warn('No Logni found. Using compiled version.', 3)
   }
 }
 

@@ -5,6 +5,7 @@ import { DEFAULT_DATA_LAYER_NAME } from './constants'
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
     this.widgetType = widgetType
+    initLogniIfNeeded(this.widgetType)
     this.logniWrapper = new logniWrapper(this.widgetType)
     this.rootElement = this.getRootElement(rootElementId)
     this.htmlTemplate = htmlTemplate
