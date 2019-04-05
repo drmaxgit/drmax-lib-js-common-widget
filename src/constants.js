@@ -6,7 +6,7 @@ export const DEFAULT_DATA_LAYER_NAME = 'dataLayerDrmax'
 export const APOTHEKAS_API_URL = 'https://api-apotheka.drmax.cz/api/v1/pharmacy'
 
 // ESHOP
-export const ESHOP_URL = 'https://api-eshop.drmax.cz'
+export const ESHOP_URL = 'https://www.drmax.cz/'
 export const MEDIA_WEB_URL = 'https://media-eshop.drmax.cz'
 
 // CHECKOUT
