@@ -12,25 +12,6 @@
 
     <!-- LOGni -->
     <script src="__URL_LOGNIJS__/js/logni.min.js?v=__VERSION_LOGNI__"></script>
-    <script type="text/javascript">
-      // Logni settings (used here and in backup initilization)
-      window.logniMask = '__LOGNI_MASK__'
-      window.logniLogUrl = '__URL_LOGNILOG__'
-      window.logniStdErr = '__LOGNI_STDERR__'
-      window.logniRelease = '__VERSION__'
-      window.logniEnvironment = '__ENV__'
-      window.logniName = 'drmax-checkout'
-
-      // Logni initilization (there is also backup initialization in logniWrapper.js)
-      if (window.logni !== undefined) {
-        window.logni.mask( window.logniMask );
-        window.logni.file( window.logniLogUrl );
-        window.logni.stderr( window.logniStdErr );
-        window.logni.release( window.logniRelease );
-        window.logni.enviroment( window.logniEnvironment );
-        window.logni.name( window.logniName );
-      }
-    </script>
   </head>
   <body>
     <div id="common-widget"></div>

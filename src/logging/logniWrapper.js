@@ -1,5 +1,13 @@
 // @flow
 import logni from 'logni.js'
+import {
+  LOGNI_NAME,
+  LOGNI_MASK,
+  LOGNI_RELEASE,
+  LOGNI_STD_ERR,
+  LOGNI_LOG_URL,
+  LOGNI_ENVIROMENT,
+} from '../constants'
 
 /**
  * Simple wrapper of logni.
@@ -52,12 +60,12 @@ class logniWrapper {
 export const initLogniIfNeeded = (widgetType) => {
   const logniWrapperObject = new logniWrapper(widgetType)
   if (!window.logni) {
-    logni.mask(window.logniMask)
-    logni.file(window.logniLogUrl)
-    logni.stderr(window.logniStdErr)
-    logni.release(window.logniRelease)
-    logni.enviroment(window.logniEnvironment)
-    logni.name(window.logniName)
+    logni.mask(LOGNI_MASK)
+    logni.file(LOGNI_LOG_URL)
+    logni.stderr(LOGNI_STD_ERR)
+    logni.release(LOGNI_RELEASE)
+    logni.enviroment(LOGNI_ENVIROMENT)
+    logni.name(LOGNI_NAME)
 
     window.logni = logni
 
