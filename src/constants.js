@@ -2,11 +2,18 @@
 // TODO: Pass this from outside (either from window global var or through contructor).
 export const DEFAULT_DATA_LAYER_NAME = 'dataLayerDrmax'
 
-// PLACEHOLDER IMAGE
-export const PLACEHOLDER_IMAGE_URL = 'https://media-eshop.drmax.cz/media/catalog/product/placeholder/default/square_placeholder.png'
-
 // APOTHEKA
 export const APOTHEKAS_API_URL = 'https://api-apotheka.drmax.cz/api/v1/pharmacy'
+
+// ESHOP
+export const ESHOP_URL = 'https://api-eshop.drmax.cz'
+export const MEDIA_WEB_URL = 'https://media-eshop.drmax.cz'
+
+// CHECKOUT
+export const CHECKOUT_URL = 'https://kosik.drmax.cz'
+
+// PLACEHOLDER IMAGE
+export const PLACEHOLDER_IMAGE_URL = `${MEDIA_WEB_URL}/media/catalog/product/placeholder/default/square_placeholder.png`
 
 // LOGNI
 export const LOGNI_MASK = 'I3E1C1W2'
