@@ -1,3 +1,5 @@
+import { getMeta } from './helpers'
+
 // DEFAULT CONSTANTS
 export const DEFAULT_DRMAX_ESHOP_API_URL = 'https://api-eshop.drmax.cz'
 export const DEFAULT_DRMAX_ESHOP_WEB_URL = 'https://www.drmax.cz'
