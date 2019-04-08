@@ -13,7 +13,7 @@ export const DEFAULT_DRMAX_APOTHEKA_WEB_URL = 'https://lekarny.drmax.cz'
 export const DEFAULT_DRMAX_SEARCH_API_URL = 'https://api-algolia.drmax.cz'
 export const DEFAULT_DRMAX_SSO_WEB_URL = 'https://sso.drmax.cz -> SSO web'
 export const DEFAULT_DRMAX_CMS_API_URL = 'https://www.drmax.cz'
-export const DEFAULT_DRMAX_MEDIA_WEB_URL = 'https://media-eshop.drmax.cz '
+export const DEFAULT_DRMAX_MEDIA_WEB_URL = 'https://media-eshop.drmax.cz'
 export const DEFAULT_DRMAX_COMMON_WEB_URL = 'https://live-common.drmax.cz'
 
 // META CONFIG (FROM OUTSIDE)
