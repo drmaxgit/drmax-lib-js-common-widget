@@ -1,19 +1,19 @@
 //@flow
 import logniWrapper, { initLogniIfNeeded } from './logging/logniWrapper'
 import {
-  DEFAULT_DATA_LAYER_NAME,
+  DRMAX_COMMON_DATALAYER_NAME,
   PLACEHOLDER_IMAGE_URL,
-  APOTHEKAS_API_URL,
-  ESHOP_URL,
-  CHECKOUT_URL,
+  DRMAX_APOTHEKA_URL,
+  DRMAX_ESHOP_WEB_URL,
+  DRMAX_CHECKOUT_WEB_URL,
 } from './constants'
 
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
     this.widgetType = widgetType
-    this.apothekaApiUrl = APOTHEKAS_API_URL
-    this.eshopUrl = ESHOP_URL
-    this.checkoutUrl = CHECKOUT_URL
+    this.apothekaUrl = DRMAX_APOTHEKA_URL
+    this.eshopWebUrl = DRMAX_ESHOP_WEB_URL
+    this.checkoutWebUrl = DRMAX_CHECKOUT_WEB_URL
     this.placeholderImageUrl = PLACEHOLDER_IMAGE_URL
     initLogniIfNeeded(this.widgetType)
     this.logniWrapper = new logniWrapper(this.widgetType)
@@ -41,7 +41,7 @@ export default class CommonWidget {
   }
 
   static getDataLayerName() {
-    return DEFAULT_DATA_LAYER_NAME
+    return DRMAX_COMMON_DATALAYER_NAME
   }
 
   getLogniWrapper() {
