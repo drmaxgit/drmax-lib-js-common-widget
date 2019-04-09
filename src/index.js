@@ -22,7 +22,6 @@ import {
 
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
-    CommonWidget.initMetaConstants()
     this.widgetType = widgetType
     initLogniIfNeeded(this.widgetType)
     this.logniWrapper = new logniWrapper(this.widgetType)
@@ -31,23 +30,27 @@ export default class CommonWidget {
     this.setHtmlTemplate(rootElementId)
   }
 
-  static initMetaConstants() {
-    this.eshopApiUrl = getMeta('drmax-eshop-api-url') || DRMAX_ESHOP_API_URL
-    this.eshopWebUrl = getMeta('drmax-eshop-web-url') || DRMAX_ESHOP_WEB_URL
-    this.checkoutWebUrl = getMeta('drmax-checkout-web-url') || DRMAX_CHECKOUT_WEB_URL
-    this.checkoutRefreshDelay = getMeta('drmax-checkout-refreshdelay') || DRMAX_CHECKOUT_REFRESHDELAY
-    this.commonDatalayerName = getMeta('drmax-common-datalayer-name') || DRMAX_COMMON_DATALAYER_NAME
-    this.commonCookieDomain = getMeta('drmax-common-cookie-domain') || DRMAX_COMMON_COOKIE_DOMAIN
-    this.commonCookieMaxAge = getMeta('drmax-common-cookie-maxage') || DRMAX_COMMON_COOKIE_MAXAGE
-    this.apothekaApiUrl = getMeta('drmax-apotheka-api-url') || DRMAX_APOTHEKA_API_URL
-    this.apothekaWebUrl = getMeta('drmax-apotheka-web-url') || DRMAX_APOTHEKA_WEB_URL
-    this.searchApiUrl = getMeta('drmax-search-api-url') || DRMAX_SEARCH_API_URL
-    this.ssoWebUrl = getMeta('drmax-sso-web-url') || DRMAX_SSO_WEB_URL
-    this.cmsApiUrl = getMeta('drmax-cms-api-url') || DRMAX_CMS_API_URL
-    this.mediaWebUrl = getMeta('drmax-media-web-url') || DRMAX_MEDIA_WEB_URL
-    this.commonWebUrl = getMeta('drmax-common-web-url') || DRMAX_COMMON_WEB_URL
-    this.apothekaUrl = this.apothekaApiUrl + DRMAX_APOTHEKA_API_URL_PREFIX
-    this.placeholderImageUrl = `${DRMAX_MEDIA_WEB_URL}/media/catalog/product/placeholder/default/square_placeholder.png`
+  static getMetaConstants() {
+    const apothekaApiUrl = getMeta('drmax-apotheka-api-url') || DRMAX_APOTHEKA_API_URL
+    
+    return {
+      eshopApiUrl: getMeta('drmax-eshop-api-url') || DRMAX_ESHOP_API_URL,
+      eshopWebUrl: getMeta('drmax-eshop-web-url') || DRMAX_ESHOP_WEB_URL,
+      checkoutWebUrl: getMeta('drmax-checkout-web-url') || DRMAX_CHECKOUT_WEB_URL,
+      checkoutRefreshDelay: getMeta('drmax-checkout-refreshdelay') || DRMAX_CHECKOUT_REFRESHDELAY,
+      commonDatalayerName: getMeta('drmax-common-datalayer-name') || DRMAX_COMMON_DATALAYER_NAME,
+      commonCookieDomain: getMeta('drmax-common-cookie-domain') || DRMAX_COMMON_COOKIE_DOMAIN,
+      commonCookieMaxAge: getMeta('drmax-common-cookie-maxage') || DRMAX_COMMON_COOKIE_MAXAGE,
+      apothekaApiUrl,
+      apothekaWebUrl: getMeta('drmax-apotheka-web-url') || DRMAX_APOTHEKA_WEB_URL,
+      searchApiUrl: getMeta('drmax-search-api-url') || DRMAX_SEARCH_API_URL,
+      ssoWebUrl: getMeta('drmax-sso-web-url') || DRMAX_SSO_WEB_URL,
+      cmsApiUrl: getMeta('drmax-cms-api-url') || DRMAX_CMS_API_URL,
+      mediaWebUrl: getMeta('drmax-media-web-url') || DRMAX_MEDIA_WEB_URL,
+      commonWebUrl: getMeta('drmax-common-web-url') || DRMAX_COMMON_WEB_URL,
+      apothekaUrl: apothekaApiUrl + DRMAX_APOTHEKA_API_URL_PREFIX,
+      placeholderImageUrl: `${DRMAX_MEDIA_WEB_URL}/media/catalog/product/placeholder/default/square_placeholder.png`,
+    }
   }
 
   setHtmlTemplate(rootElementId) {
