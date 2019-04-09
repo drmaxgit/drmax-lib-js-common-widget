@@ -32,6 +32,7 @@ export default class CommonWidget {
 
   static getMetaConstants() {
     const apothekaApiUrl = getMeta('drmax-apotheka-api-url') || DRMAX_APOTHEKA_API_URL
+    
     return {
       eshopApiUrl: getMeta('drmax-eshop-api-url') || DRMAX_ESHOP_API_URL,
       eshopWebUrl: getMeta('drmax-eshop-web-url') || DRMAX_ESHOP_WEB_URL,
