@@ -13,6 +13,7 @@ export const DRMAX_SSO_WEB_URL = 'https://sso.drmax.cz -> SSO web'
 export const DRMAX_CMS_API_URL = 'https://www.drmax.cz'
 export const DRMAX_MEDIA_WEB_URL = 'https://media-eshop.drmax.cz'
 export const DRMAX_COMMON_WEB_URL = 'https://live-common.drmax.cz'
+export const DRMAX_MEGAMENU_WIDGET_URL = 'https://develop-widget-megamenu.drmax.cz'
 
 // APOTHEKA
 export const DRMAX_APOTHEKA_API_URL_PREFIX = '/api/v1/pharmacy'

@@ -18,6 +18,7 @@ import {
   DRMAX_CMS_API_URL,
   DRMAX_MEDIA_WEB_URL,
   DRMAX_COMMON_WEB_URL,
+  DRMAX_MEGAMENU_WIDGET_URL,
 } from './constants'
 
 export default class CommonWidget {
@@ -50,6 +51,7 @@ export default class CommonWidget {
       drmaxCommonWebUrl: getMeta('drmax-common-web-url') || DRMAX_COMMON_WEB_URL,
       drmaxApothekaUrl: drmaxApothekaApiUrl + DRMAX_APOTHEKA_API_URL_PREFIX,
       drmaxPlaceholderImageUrl: `${DRMAX_MEDIA_WEB_URL}/media/catalog/product/placeholder/default/square_placeholder.png`,
+      drmaxMegamenuWidgetUrl: getMeta('drmax-megamenu-widget-url') || DRMAX_MEGAMENU_WIDGET_URL,
     }
   }
 
