@@ -26,7 +26,11 @@ export default class CommonWidget {
     this.widgetType = widgetType
     initLogniIfNeeded(this.widgetType)
     this.logniWrapper = new logniWrapper(this.widgetType)
-    this.rootElement = this.getRootElement(rootElementId)
+
+    if (rootElementId) {
+      this.rootElement = this.getRootElement(rootElementId)
+    }
+    
     this.htmlTemplate = htmlTemplate
     this.setHtmlTemplate(rootElementId)
   }
