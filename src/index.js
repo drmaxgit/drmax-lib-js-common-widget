@@ -31,7 +31,7 @@ export default class CommonWidget {
     if (rootElementId) {
       this.rootElement = this.getRootElement(rootElementId)
     }
-    
+
     this.htmlTemplate = htmlTemplate
     this.setHtmlTemplate(rootElementId)
   }
@@ -55,7 +55,7 @@ export default class CommonWidget {
       drmaxMediaWebUrl: getMeta('drmax-media-web-url') || DRMAX_MEDIA_WEB_URL,
       drmaxCommonWebUrl: getMeta('drmax-common-web-url') || DRMAX_COMMON_WEB_URL,
       drmaxApothekaUrl: drmaxApothekaApiUrl + DRMAX_APOTHEKA_API_URL_PREFIX,
-      drmaxPlaceholderImageUrl: `${DRMAX_MEDIA_WEB_URL}/media/catalog/product/placeholder/default/square_placeholder.png`,
+      drmaxPlaceholderImageUrl: `${DRMAX_MEDIA_WEB_URL}/media/catalog/product/placeholder/default/150x150/square_placeholder.png`,
       drmaxMegamenuWidgetUrl: getMeta('drmax-megamenu-widget-url') || DRMAX_MEGAMENU_WIDGET_URL,
       drmaxApothekaWidgetUrl: getMeta('drmax-apotheka-widget-url') || DRMAX_APOTHEKA_WIDGET_URL,
     }
