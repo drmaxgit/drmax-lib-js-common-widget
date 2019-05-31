@@ -1,8 +1,7 @@
 //@flow
 import { getMeta } from './helpers'
-import logniWrapper, { initLogniIfNeeded } from './logging/logniWrapper'
+import LogniWrapper, { initLogniIfNeeded } from './logging/logniWrapper'
 import {
-  PLACEHOLDER_IMAGE_URL,
   DRMAX_APOTHEKA_API_URL_PREFIX,
   DRMAX_ESHOP_API_URL,
   DRMAX_ESHOP_WEB_URL,
@@ -26,7 +25,7 @@ export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
     this.widgetType = widgetType
     initLogniIfNeeded(this.widgetType)
-    this.logniWrapper = new logniWrapper(this.widgetType)
+    this.logniWrapper = new LogniWrapper(this.widgetType)
 
     if (rootElementId) {
       this.rootElement = this.getRootElement(rootElementId)

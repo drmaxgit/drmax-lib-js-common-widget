@@ -12,7 +12,7 @@ import {
 /**
  * Simple wrapper of logni.
  */
-class logniWrapper {
+class LogniWrapper {
   constructor(id) {
     this.id = id
   }
@@ -58,7 +58,7 @@ class logniWrapper {
  * initialized there. In case that fails, we use compiled version that is initialized here.
  */
 export const initLogniIfNeeded = (widgetType) => {
-  const logniWrapperObject = new logniWrapper(widgetType)
+  const logniWrapperObject = new LogniWrapper(widgetType)
   if (!window.logni) {
     logni.mask(LOGNI_MASK)
     logni.file(LOGNI_LOG_URL)
@@ -73,4 +73,4 @@ export const initLogniIfNeeded = (widgetType) => {
   }
 }
 
-export default logniWrapper
+export default LogniWrapper
