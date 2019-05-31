@@ -20,9 +20,9 @@ export const DRMAX_APOTHEKA_WIDGET_URL = 'https://develop-widget-apotheka.drmax.
 export const DRMAX_APOTHEKA_API_URL_PREFIX = '/api/v1/pharmacy'
 
 // LOGNI
-export const LOGNI_MASK = 'I3E1C1W2'
-export const LOGNI_LOG_URL = 'https://develop-jslog.logni.net'
-export const LOGNI_STD_ERR = '0'
-export const LOGNI_RELEASE = '1.0'
-export const LOGNI_ENVIROMENT = 'develop'
-export const LOGNI_NAME = 'drmax-widget'
+export const LOGNI_MASK = window.logniMask || 'I3E1C1W2'
+export const LOGNI_LOG_URL = window.logniLogUrl || 'https://develop-jslog.logni.net'
+export const LOGNI_STD_ERR = window.logniStdErr || '0'
+export const LOGNI_RELEASE = window.logniRelease || '1.0'
+export const LOGNI_ENVIROMENT = window.logniEnvironment || 'develop'
+export const LOGNI_NAME = window.logniName || 'drmax-widget'
