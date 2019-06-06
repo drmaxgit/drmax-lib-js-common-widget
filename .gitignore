@@ -1,0 +1,7 @@
+# Classic
+node_modules
+dist
+build
+
+# Webstorm
+.idea/
