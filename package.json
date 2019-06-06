@@ -1,0 +1,37 @@
+{
+  "name": "drmax-common-widget",
+  "version": "1.0.0",
+  "description": "Common widget",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config etc/config/webpack.config-live.js",
+    "start": "webpack-dev-server --open --config etc/config/webpack.config-develop.js",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drmaxgit/drmax-lib-js-common-widget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drmaxgit/drmax-lib-js-common-widget/issues"
+  },
+  "homepage": "https://github.com/drmaxgit/drmax-lib-js-common-widget#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.95.1",
+    "html-webpack-plugin": "^3.2.0",
+    "logni.js": "^0.1.2",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  }
+}
