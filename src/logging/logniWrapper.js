@@ -4,7 +4,7 @@ import {
   LOGNI_NAME,
   LOGNI_MASK,
   LOGNI_RELEASE,
-  LOGNI_STD_ERR,
+  LOGNI_STDERR,
   LOGNI_LOG_URL,
   LOGNI_ENVIROMENT,
 } from '../constants'
@@ -25,7 +25,7 @@ class LogniWrapper {
   */
   addIdToMsg(msg) {
     if (this.id) {
-      return `${this.id}: ${msg}`
+      return `[${this.id}] ${msg}`
     }
     return `${msg}`
   }
@@ -43,7 +43,11 @@ class LogniWrapper {
   }
 
   fatal(msg, level) {
-    return window.logni.fatal(this.addIdToMsg(msg), level)
+    return window.logni.critical(this.addIdToMsg(msg), level)
+  }
+
+  critical(msg, level) {
+    return window.logni.critical(this.addIdToMsg(msg), level)
   }
 
   debug(msg, level) {
@@ -52,17 +56,21 @@ class LogniWrapper {
 }
 
 /**
+ * Init logni if needed
+ *
  * Initializes Logni in case it has not been initialized in index.html.
  *
  * In normal case, Logni is loaded as remote script in index.html and
  * initialized there. In case that fails, we use compiled version that is initialized here.
+ *
+ * @param widgetType
  */
 export const initLogniIfNeeded = (widgetType) => {
   const logniWrapperObject = new LogniWrapper(widgetType)
   if (!window.logni) {
     logni.mask(LOGNI_MASK)
     logni.file(LOGNI_LOG_URL)
-    logni.stderr(LOGNI_STD_ERR)
+    logni.stderr(LOGNI_STDERR)
     logni.release(LOGNI_RELEASE)
     logni.enviroment(LOGNI_ENVIROMENT)
     logni.name(LOGNI_NAME)
