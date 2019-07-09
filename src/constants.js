@@ -49,3 +49,6 @@ export const DRMAX_SSO_WIDGET_URL = 'https://live-widget-sso.drmax.cz' // new
 
 // SUKL
 export const DRMAX_SUKL_WIDGET_URL = 'https://live-widget-sukl.drmax.cz' // new
+
+// COOKIE
+export const PHARMACY_ID_COOKIE_NAME = 'Checkout20PharmacyId'

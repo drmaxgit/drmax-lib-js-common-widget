@@ -18,7 +18,8 @@ import {
   DRMAX_MEDIA_WEB_URL,
   DRMAX_COMMON_WEB_URL,
   DRMAX_MEGAMENU_WIDGET_URL,
-  DRMAX_APOTHEKA_WIDGET_URL
+  DRMAX_APOTHEKA_WIDGET_URL,
+  PHARMACY_ID_COOKIE_NAME,
 } from './constants'
 
 export default class CommonWidget {
@@ -37,6 +38,7 @@ export default class CommonWidget {
 
   static getMetaConstants() {
     const drmaxApothekaApiUrl = getMeta('drmax-apotheka-api-url') || DRMAX_APOTHEKA_API_URL
+    const drmaxCommonCookiePrefix = getMeta('drmax-common-cookie-prefix') || DRMAX_COMMON_COOKIE_PREFIX,
 
     return {
       drmaxEshopApiUrl: getMeta('drmax-eshop-api-url') || DRMAX_ESHOP_API_URL,
@@ -46,7 +48,7 @@ export default class CommonWidget {
       drmaxCommonDatalayerName: getMeta('drmax-common-datalayer-name') || DRMAX_COMMON_DATALAYER_NAME,
       drmaxCommonCookieDomain: getMeta('drmax-common-cookie-domain') || DRMAX_COMMON_COOKIE_DOMAIN,
       drmaxCommonCookieMaxAge: getMeta('drmax-common-cookie-maxage') || DRMAX_COMMON_COOKIE_MAXAGE,
-      drmaxCommonCookiePrefix: getMeta('drmax-common-cookie-prefix') || DRMAX_COMMON_COOKIE_PREFIX,
+      drmaxCommonCookiePrefix,
       drmaxApothekaApiUrl,
       drmaxApothekaWebUrl: getMeta('drmax-apotheka-web-url') || DRMAX_APOTHEKA_WEB_URL,
       drmaxSearchApiUrl: getMeta('drmax-search-api-url') || DRMAX_SEARCH_API_URL,
@@ -58,6 +60,7 @@ export default class CommonWidget {
       drmaxPlaceholderImageUrl: `${DRMAX_MEDIA_WEB_URL}/media/catalog/product/placeholder/default/150x150/square_placeholder.png`,
       drmaxMegamenuWidgetUrl: getMeta('drmax-megamenu-widget-url') || DRMAX_MEGAMENU_WIDGET_URL,
       drmaxApothekaWidgetUrl: getMeta('drmax-apotheka-widget-url') || DRMAX_APOTHEKA_WIDGET_URL,
+      drmaxPharmacyIdCookieName: drmaxCommonCookiePrefix + PHARMACY_ID_COOKIE_NAME,
     }
   }
 
