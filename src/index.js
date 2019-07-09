@@ -46,6 +46,7 @@ export default class CommonWidget {
       drmaxCommonDatalayerName: getMeta('drmax-common-datalayer-name') || DRMAX_COMMON_DATALAYER_NAME,
       drmaxCommonCookieDomain: getMeta('drmax-common-cookie-domain') || DRMAX_COMMON_COOKIE_DOMAIN,
       drmaxCommonCookieMaxAge: getMeta('drmax-common-cookie-maxage') || DRMAX_COMMON_COOKIE_MAXAGE,
+      drmaxCommonCookiePrefix: getMeta('drmax-common-cookie-prefix') || DRMAX_COMMON_COOKIE_PREFIX,
       drmaxApothekaApiUrl,
       drmaxApothekaWebUrl: getMeta('drmax-apotheka-web-url') || DRMAX_APOTHEKA_WEB_URL,
       drmaxSearchApiUrl: getMeta('drmax-search-api-url') || DRMAX_SEARCH_API_URL,

@@ -17,6 +17,7 @@ export const DRMAX_CMS_API_URL = 'https://www.drmax.cz'
 // Common
 export const DRMAX_COMMON_COOKIE_DOMAIN = '.drmax.cz'
 export const DRMAX_COMMON_COOKIE_MAXAGE = 2592000
+export const DRMAX_COMMON_COOKIE_PREFIX = 'live'
 export const DRMAX_COMMON_DATALAYER_NAME = 'dataLayerDRMAX'
 export const DRMAX_COMMON_WEB_URL = 'https://live-common.drmax.cz'
 
