@@ -20,6 +20,7 @@ import {
   DRMAX_MEGAMENU_WIDGET_URL,
   DRMAX_APOTHEKA_WIDGET_URL,
   PHARMACY_ID_COOKIE_NAME,
+  DRMAX_COMMON_COOKIE_PREFIX,
 } from './constants'
 
 export default class CommonWidget {
@@ -38,7 +39,7 @@ export default class CommonWidget {
 
   static getMetaConstants() {
     const drmaxApothekaApiUrl = getMeta('drmax-apotheka-api-url') || DRMAX_APOTHEKA_API_URL
-    const drmaxCommonCookiePrefix = getMeta('drmax-common-cookie-prefix') || DRMAX_COMMON_COOKIE_PREFIX,
+    const drmaxCommonCookiePrefix = getMeta('drmax-common-env-url') || DRMAX_COMMON_COOKIE_PREFIX
 
     return {
       drmaxEshopApiUrl: getMeta('drmax-eshop-api-url') || DRMAX_ESHOP_API_URL,
