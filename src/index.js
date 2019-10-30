@@ -1,6 +1,6 @@
 //@flow
 import { getMeta } from './helpers'
-import LogniWrapper, { initLogniIfNeeded } from './logging/logniWrapper'
+import logWrapper from './logging/logWrapper'
 import {
   DRMAX_APOTHEKA_API_URL_PREFIX,
   DRMAX_ESHOP_API_URL,
@@ -26,8 +26,6 @@ import {
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
     this.widgetType = widgetType
-    initLogniIfNeeded(this.widgetType)
-    this.logniWrapper = new LogniWrapper(this.widgetType)
 
     if (rootElementId) {
       this.rootElement = this.getRootElement(rootElementId)
@@ -68,7 +66,7 @@ export default class CommonWidget {
   setHtmlTemplate(rootElementId) {
     if (this.rootElement) {
       this.rootElement.innerHTML = this.htmlTemplate
-      this.logniWrapper.debug(`Widget mounted on #${rootElementId} element.`, 1)
+      logWrapper.debug(`Widget mounted on #${rootElementId} element.`)
     }
   }
 
@@ -77,7 +75,7 @@ export default class CommonWidget {
 
     if (!rootElement) {
       const errorDetail = `Unable to find root #${rootElementId} element.`
-      this.logniWrapper.error(errorDetail, 3)
+      logWrapper.error(errorDetail, 3)
     }
 
     return rootElement
@@ -87,8 +85,8 @@ export default class CommonWidget {
     return DRMAX_COMMON_DATALAYER_NAME
   }
 
-  getLogniWrapper() {
-    return this.logniWrapper
+  getLogWrapper() {
+    return logWrapper
   }
 
   unmount() {
