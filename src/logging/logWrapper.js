@@ -36,3 +36,4 @@ const logWrapper = {
   },
 }
 
+export default logWrapper
