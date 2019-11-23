@@ -1,6 +1,7 @@
 //@flow
 import { getMeta } from './helpers'
-import logWrapper from './logging/logWrapper'
+import logWrapper from './logging/LogWrapper'
+
 import {
   DRMAX_APOTHEKA_API_URL_PREFIX,
   DRMAX_ESHOP_API_URL,
