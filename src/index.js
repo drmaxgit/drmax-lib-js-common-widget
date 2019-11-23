@@ -90,6 +90,11 @@ export default class CommonWidget {
     return logWrapper
   }
 
+  // LEGACY - HAS TO BE REMOVED
+  getLogWrapper() {
+    return logWrapper
+  }
+
   unmount() {
     this.rootElement.innerHTML = ''
   }
