@@ -1,4 +1,5 @@
 // @flow
+
 /**
  * log wrapper
  *
