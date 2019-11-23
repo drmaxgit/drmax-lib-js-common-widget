@@ -8,7 +8,7 @@
 const environment = process.env.NODE_ENV
 const isLoggerOn = environment === 'development'
 
-const LogWrapper = {
+const logWrapper = {
   info: (msg: string) => {
     if (isLoggerOn) {
       console.info(msg)
