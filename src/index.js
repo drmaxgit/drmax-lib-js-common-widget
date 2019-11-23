@@ -1,6 +1,6 @@
 //@flow
 import { getMeta } from './helpers'
-import LogWrapper from './logging/LogWrapper'
+import logWrapper from './logging/LogWrapper'
 
 import {
   DRMAX_APOTHEKA_API_URL_PREFIX,
@@ -27,7 +27,6 @@ import {
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
     this.widgetType = widgetType
-    this.logWrapper = LogWrapper
 
     if (rootElementId) {
       this.rootElement = this.getRootElement(rootElementId)
@@ -88,7 +87,7 @@ export default class CommonWidget {
   }
 
   getLogWrapper() {
-    return this.logWrapper
+    return logWrapper
   }
 
   unmount() {
