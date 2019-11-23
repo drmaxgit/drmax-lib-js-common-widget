@@ -1,6 +1,10 @@
 //@flow
 import { getMeta } from './helpers'
+<<<<<<< Updated upstream
 import logWrapper from './logging/logWrapper'
+=======
+import LogWrapper from './logging/logWrapper'
+>>>>>>> Stashed changes
 import {
   DRMAX_APOTHEKA_API_URL_PREFIX,
   DRMAX_ESHOP_API_URL,
@@ -26,6 +30,10 @@ import {
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
     this.widgetType = widgetType
+<<<<<<< Updated upstream
+=======
+    this.logWrapper = new LogWrapper(this.widgetType)
+>>>>>>> Stashed changes
 
     if (rootElementId) {
       this.rootElement = this.getRootElement(rootElementId)
@@ -66,7 +74,11 @@ export default class CommonWidget {
   setHtmlTemplate(rootElementId) {
     if (this.rootElement) {
       this.rootElement.innerHTML = this.htmlTemplate
+<<<<<<< Updated upstream
       logWrapper.debug(`Widget mounted on #${rootElementId} element.`)
+=======
+      this.logWrapper.debug(`Widget mounted on #${rootElementId} element.`, 1)
+>>>>>>> Stashed changes
     }
   }
 
@@ -75,7 +87,11 @@ export default class CommonWidget {
 
     if (!rootElement) {
       const errorDetail = `Unable to find root #${rootElementId} element.`
+<<<<<<< Updated upstream
       logWrapper.error(errorDetail, 3)
+=======
+      this.logWrapper.error(errorDetail, 3)
+>>>>>>> Stashed changes
     }
 
     return rootElement
@@ -85,10 +101,13 @@ export default class CommonWidget {
     return DRMAX_COMMON_DATALAYER_NAME
   }
 
+<<<<<<< Updated upstream
   getLogWrapper() {
     return logWrapper
   }
 
+=======
+>>>>>>> Stashed changes
   unmount() {
     this.rootElement.innerHTML = ''
   }

@@ -27,15 +27,6 @@ export const DRMAX_ESHOP_MEDIA_URL = 'https://media-eshop.drmax.cz' // new eshop
 export const DRMAX_MEDIA_WEB_URL = 'https://media-eshop.drmax.cz' // old eshop media
 export const DRMAX_ESHOP_WEB_URL = 'https://www.drmax.cz'
 
-// Logni (https://github.com/erikni/logni.js)
-export const LOGNI_MASK = window.logniMask || 'I3E1C1W2'
-export const LOGNI_LOG_URL = window.logniLogUrl || 'https://live-logni.cloud-drmax.cz'
-export const LOGNI_STD_ERR = window.logniStdErr || 0 // old
-export const LOGNI_STDERR = window.logniStdErr || 0 // new
-export const LOGNI_RELEASE = window.logniRelease || '0.0.0'
-export const LOGNI_ENVIROMENT = window.logniEnvironment || 'unknown'
-export const LOGNI_NAME = window.logniName || 'drmax-widget'
-
 // Mega menu
 export const DRMAX_MEGAMENU_WIDGET_URL = 'https://live-widget-megamenu.drmax.cz'
 
