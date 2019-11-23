@@ -91,7 +91,7 @@ export default class CommonWidget {
   }
 
   // LEGACY - HAS TO BE REMOVED
-  getLogWrapper() {
+  getLogniWrapper() {
     return logWrapper
   }
 
