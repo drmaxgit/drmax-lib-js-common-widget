@@ -1,6 +1,6 @@
 //@flow
 import { getMeta } from './helpers'
-import logWrapper from './logging/logWrapper'
+import LogWrapper from './logging/LogWrapper'
 
 import {
   DRMAX_APOTHEKA_API_URL_PREFIX,
@@ -85,6 +85,10 @@ export default class CommonWidget {
 
   static getDataLayerName() {
     return DRMAX_COMMON_DATALAYER_NAME
+  }
+
+  getLogWrapper() {
+    return this.logWrapper
   }
 
   unmount() {
