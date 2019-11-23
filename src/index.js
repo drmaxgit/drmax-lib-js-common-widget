@@ -27,7 +27,7 @@ import {
 export default class CommonWidget {
   constructor (rootElementId, htmlTemplate, widgetType) {
     this.widgetType = widgetType
-    this.logWrapper = new LogWrapper(this.widgetType)
+    this.logWrapper = LogWrapper
 
     if (rootElementId) {
       this.rootElement = this.getRootElement(rootElementId)
